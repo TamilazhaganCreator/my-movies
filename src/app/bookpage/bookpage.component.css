@@ -1,0 +1,23 @@
+.time {
+    margin-right: 4%;
+    border-radius: 4px;
+    padding: 1%;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .1)
+}
+
+.time:hover{
+    color:#94618e;
+    border-color: #49274a;
+}
+
+.theatre {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+}
+
+.theatre-name {
+    font-size: 1.16em;
+    margin-bottom: 20px
+}

@@ -1,0 +1,45 @@
+  .card {
+      margin-bottom: 20px;
+      border-radius: 8px !important;
+  }
+
+  .full-page {
+      margin: 0 auto;
+      padding: 25px 20px;
+      font-size: .9rem;
+      max-width: 1240px;
+  }
+
+  .card-header {
+      border-radius: 8px !important;
+      background: white !important;
+      padding: 8px;
+      border: none;
+  }
+
+  .movie-body {
+      padding-top: 8px;
+      padding-bottom: 8px;
+  }
+
+  .filter-body {
+      padding-top: 0;
+  }
+
+  .card-img-top {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+  }
+
+  .btn-link:hover {
+      text-decoration: none !important
+  }
+
+  .btn-link {
+      color: #424242;
+      text-decoration: none !important
+  }
+
+  .form-group {
+      margin-bottom: 0 !important;
+  }

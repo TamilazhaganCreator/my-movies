@@ -1,0 +1,57 @@
+<div class="full-page">
+  <div>
+    <div class="row">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <div>
+          Filters
+        </div>
+        <hr>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <div class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
+                  Select Language
+                </button>
+              </div>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body filter-body">
+                <div class="form-group form-check" *ngFor="let lan of languages">
+                  <input type="checkbox" class="form-check-input" (click)="selectedLang($event,lan)" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">{{lan}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-9 col-lg-9">
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let movie of moviesArray">
+            <div class="card" style="cursor: pointer" (click)="goToBook(movie.id)">
+              <img class="card-img-top " [src]="movie.img" alt="Card image cap">
+              <div class="card-body movie-body">
+                <div class="row">
+                  <div class="col-sm-4" style="font-size: .75rem;padding:0;text-align:center;">
+                    <div> <img style="width: .75em;" src="assets/like.svg"> {{movie.rating}} %</div>
+                    <div style="font-size: .7rem;color: #848484">
+                      {{movie.votes}} Votes
+                    </div>
+                  </div>
+                  <div class="col-sm-8" style="font-size: .9em;padding-right:0;white-space: nowrap;overflow: hidden">
+                    {{movie.name}}
+                    <div style="padding-right:0;font-size: .7rem;color: gray">
+                      {{movie.language}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

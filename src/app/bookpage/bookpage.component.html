@@ -1,0 +1,73 @@
+<div class="full-page">
+  <div class="row" *ngIf="bookMovie.id > -1">
+    <div class="col-sm-3">
+      <img [src]="bookMovie.img" style="width: 100%;">
+    </div>
+    <div class="col-sm-9">
+      <h5>
+        {{bookMovie.name}}
+      </h5>
+      <span>{{bookMovie.language}}</span>
+      <hr>
+      <div *ngFor="let theatre of theatres" class="theatre">
+        <div class="theatre-name">{{theatre}}</div>
+        <div style="margin-bottom: 2rem;">
+          <span *ngFor="let time of timing" (click)="setSelectedTheatre(theatre,time)" data-toggle="modal"
+            data-target="#exampleModalCenter" class="time">{{time}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border: none">
+      <div class="modal-header" style="border-radius:.25rem;background-color: #94618e;color:white  ">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{selectedTheatre.theatre}}</h5>
+        <button type="button" style="color: white" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="!ticketsBooked">
+          <div class="row" style="margin-bottom: 20px">
+            <div class="col-sm-5">Time</div>
+            <div class="col-sm-7">{{selectedTheatre.timing}}</div>
+          </div>
+          <div class="row" style="margin-bottom: 20px;">
+            <div class="col-sm-5">No. of tickets</div>
+            <div class="col-sm-7">
+              <select class="custom-select" (change)="findPrice($event)">
+                <option selected>Choose one</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom: 2rem">
+            <div class="col-sm-5">Price</div>
+            <div class="col-sm-7">Rs. {{price}}</div>
+          </div>
+          <div class="modal-footer" style="padding: 0;padding-top: 1rem;">
+            <button type="button" (click)="checkTickets()" style="width:100%;color:white;background-color: #49274a"
+              class="btn">Book</button>
+          </div>
+        </div>
+        <div *ngIf="ticketsBooked">
+          <div class="row">
+            <div class="col-sm-4 offset-sm-4">
+              <img src="assets/checked.svg" style="width: 100%">
+            </div>
+          </div>
+          <div style="text-align: center;margin-top: 1rem;">
+            <strong>Tickets booked successfully</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="snackbar">Kindly select no of tickets</div>

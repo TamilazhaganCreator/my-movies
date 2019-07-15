@@ -1,0 +1,13 @@
+.header {
+  cursor: pointer;
+  background-color: #94618e;
+  color: white;
+  padding: .75rem;
+  padding-left: 2rem;
+  display: flex
+}
+
+.icon {
+  width: 24px;
+  margin-right: .5rem;
+}
