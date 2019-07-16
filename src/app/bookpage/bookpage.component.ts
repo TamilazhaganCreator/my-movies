@@ -11,7 +11,7 @@ import { MovieModel } from '../model';
 })
 export class BookpageComponent implements OnInit {
 
-  private bookMovie: MovieModel = new MovieModel()
+  bookMovie: MovieModel = new MovieModel()
   theatres = ["Luxe Cinemas", "Spi Cinemas", "Pvr VR"]
   timing = ["10:00 AM", "1:00 PM", "4:00 PM", "7:00 PM", "10:00 PM"]
   price = 0
